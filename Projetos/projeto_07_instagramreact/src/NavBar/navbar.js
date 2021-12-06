@@ -5,6 +5,8 @@ import LogoMobile from './func/logo-mobile.js';
 import InstagramMobile from './func/instagram-mobile.js';
 import Pesquisa from './func/pesquisa.js';
 
+
+
 export default function NavBar() {
     return (
         <div className='navbar'>

@@ -310,6 +310,18 @@ body {
   display: none !important;
 }
 
+.comentario {
+  width:100%;
+  display: flex;
+  padding: 0 16px 8px;
+  justify-content: space-between;
+}
+
+.comentario input {
+  border: none;
+  width: 80%;
+}
+
 @media (max-width: 935px) {
   .sidebar {
     display: none;

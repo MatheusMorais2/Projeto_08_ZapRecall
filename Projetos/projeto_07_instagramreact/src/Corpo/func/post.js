@@ -1,6 +1,7 @@
-export default function Post(props) {
-    const {user, userIcon, content, likesIcon, likesUser, likesNumber} = props.data
+import Comentarios from "./comentarios";
 
+export default function Post(props) {
+    const {user, userIcon, content, likesIcon, likesUser, likesNumber, coments} = props.data
     return(
         <div className="post">
               <div className="topo">
@@ -35,6 +36,8 @@ export default function Post(props) {
                     Curtido por <strong>{likesUser}</strong> e <strong>outras {likesNumber} pessoas</strong>
                   </div>
                 </div>
+
+                <Comentarios data={coments}/>
               </div>
         </div>
     )
