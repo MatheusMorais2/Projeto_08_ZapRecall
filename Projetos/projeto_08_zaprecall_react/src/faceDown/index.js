@@ -1,18 +1,21 @@
-export default function FaceDown() {
+import Feedback from "../feedback";
+import './style.css';
+
+export default function FaceDown({question, index, deckLen, answer, nextCard}) {
     return (
-        <>
+      <div className="card" id='face-down'>
             <header>
-                <span>
+                <span className="question-down">
                     {question}
                 </span>
                 <span className='counter'>
-                    {index}/{deckLen}
+                    {index+1}/{deckLen}
                 </span>
             </header>
-            <div>
+            <div className="answer-down">
                 {answer}
             </div>
-            <Feedback/>
-        </>
+            <Feedback nextCard={nextCard(index)}/>
+        </div>
     )
 } 

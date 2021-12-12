@@ -2,21 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import LandingPage from './landingPage';
 import Game from './game';
+import Success from './success';
+import Failure from './failure';
 import './reset.css';
 import './style.css';
 
 function App() {
-    const [start, setStart] = React.useState(false)
+    const [page, setPage] = React.useState('landing')
     
-    function startZap() {
-        setStart(true);
+    function changePage(changeTo) {
+        setPage(changeTo);
     }
 
-    return (
-        <>
-            {!start ? <LandingPage start={startZap} /> : <Game/>}
-        </>
-    )
+
+    
+    if (page === 'landing') {
+       return <LandingPage changePage={changePage} />
+    } else if (page === 'game') {
+        return <Game changePage={changePage}/>
+    } else if (page === 'success') {
+        return <Success changePage={changePage}/>
+    } else if (page === 'failure') {
+        return <Failure changePage={changePage}/>
+    }
 }
 
 ReactDOM.render(<App />, document.querySelector(".root"));

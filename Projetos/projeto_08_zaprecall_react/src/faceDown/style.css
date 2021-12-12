@@ -1,0 +1,21 @@
+.question-down {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+#face-down {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.answer-down {
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+}
