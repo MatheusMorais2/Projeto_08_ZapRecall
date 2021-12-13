@@ -1,21 +1,23 @@
-import Feedback from "../feedback";
+import ContainerButtons from "../containerButtons";
 import './style.css';
 
-export default function FaceDown({question, index, deckLen, answer, nextCard}) {
+
+
+export default function FaceDown({question, questionNumber, deckLen, answer, nextCard, showButtons, buttonHandler, color}) {
     return (
-      <div className="card" id='face-down'>
+      <div className="card" id='face-down' style={{color}}>
             <header>
                 <span className="question-down">
                     {question}
                 </span>
-                <span className='counter'>
-                    {index+1}/{deckLen}
+                <span data-identifier="counter" className='counter'>
+                    {questionNumber+1}/{deckLen}
                 </span>
             </header>
             <div className="answer-down">
                 {answer}
             </div>
-            <Feedback nextCard={nextCard(index)}/>
+            <ContainerButtons nextCard={nextCard} showButtons={showButtons} buttonHandler={buttonHandler}/>
         </div>
     )
 } 

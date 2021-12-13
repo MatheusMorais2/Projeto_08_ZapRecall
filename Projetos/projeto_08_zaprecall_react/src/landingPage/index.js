@@ -9,7 +9,7 @@ export default function LandingPage ({changePage}) {
                 <img src={logo} alt='ZapRecall logo' />
                 <p>ZapRecall</p>
             </span>
-            <button id='start-lp' onClick={() => changePage('game')}>
+            <button id='start-lp' onClick={() => changePage('game')} data-identifier="start-zap-recall">
                 <span>Praticar React </span>
                 <span>
                     <img src={playbtn} alt='Play' />

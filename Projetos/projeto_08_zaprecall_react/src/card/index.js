@@ -5,35 +5,22 @@ import FaceDown from '../faceDown';
 
 
 
-export default function Card({card, index, deckLen, nextCard}) {
+export default function Card({card, questionNumber, deckLen, nextCard, face, turnCard, buttonHandler, showButtons, color}) {
+    
+    const {question, answer} = card;
 
-    console.log('card:  ', card);
-    console.log('index:  ', index);
-    console.log('nextCard:  ', nextCard);
-    const [face, setFace] = React.useState(true);
-
-    function turnCard() {
-        setFace(!face);
-        console.log(face);
-    }
-
-    const {question, answer, score} = card;
     return (
         face 
-        ? <FaceUp question={question} index={index} deckLen={deckLen} turnCard={turnCard}/> 
-        : <FaceDown question={question} index={index} deckLen={deckLen} answer= {answer} nextCard={nextCard} />
+        ? <FaceUp question={question} questionNumber={questionNumber} deckLen={deckLen} turnCard={turnCard} color={color}/> 
+            : <FaceDown 
+                question={question} 
+                questionNumber={questionNumber} 
+                deckLen={deckLen} 
+                answer={answer} 
+                nextCard={nextCard} 
+                showButtons={showButtons} 
+                buttonHandler={buttonHandler}
+                color={color}
+            />
     )
 }
-
-/* <div className='card'>
-                <span className='counter'>{index + 1}/{deckLen}</span>
-                <span className='question'>{question}</span>
-                <ion-icon onClick={nextCard} name="arrow-undo"></ion-icon>
-                <ion-icon onClick={turnCard} name="arrow-undo"></ion-icon>
-            </div> 
-            
-
-            
-            
-            
-            */
